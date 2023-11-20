@@ -1,0 +1,3 @@
+# Let's Play Soccer Helper Firefox Extension
+
+This is a simple Mozilla Firefox browser extension that adds functionality to the [Let's Play Soccer](https://www.letsplaysoccer.com/) website. Currently, the only functionality includes adding a button to a team roster webpage. This button, when clicked, downloads an iCalendar file of the team's schedule for the season to be imported to the user's calendar.

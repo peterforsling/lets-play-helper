@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Let's Play Scheduler",
+    "version": "1.0",
+  
+    "description": "Lets the user upload their Let's Play team's scheudle to their calendar.",
+  
+    "icons": {
+      "48": "icons/Martin-Berube-Sport-Soccer.48.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.letsplaysoccer.com/*/teams/*"],
+        "js": ["scheduler.js"]
+      }
+    ]
+  }
+  
