@@ -12,7 +12,13 @@
     "content_scripts": [
       {
         "matches": ["*://*.letsplaysoccer.com/*/teams/*"],
-        "js": ["scheduler.js"]
+        "js": ["scheduler.js"],
+        "css": ["lets-play-helper.css"],
+        "run_at": "document_end"
+      },
+      {
+        "matches": ["*://*.letsplaysoccer.com/*/facilityStandings*"],
+        "js": ["standingScraper.js"]
       }
     ]
   }

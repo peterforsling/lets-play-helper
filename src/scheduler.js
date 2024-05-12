@@ -1,5 +1,6 @@
 console.log("Let's Play Scheduler!");
 
+
 const letsPlayGameTimeToUTCDate = (letsPlayDate) => {
     const currentYear = new Date(Date.now()).getFullYear();
     const letsPlayDateTokens = letsPlayDate.split(" ");
@@ -76,7 +77,6 @@ const createIcsFile = (games) => {
 
 let addGamesToCalendar = () => {
     const gameTableRows = document.getElementsByTagName("tr");
-    const columnsInTable = 5;
     const numberOfGames = 8;
 
     let calendarEvents = Array(numberOfGames);
@@ -104,8 +104,8 @@ const downloadIcsFile = () => {
                         .innerText;
     const season = document.getElementsByClassName("text-md-30-16 font-medium mb-8")
                     .item(0)
-                    .childNodes[3]
-                    .nodeValue;
+                    .outerText
+                    .split(' ')[1];
 
     const blob = new Blob([content], { type: "text/calendar" });
     const link = document.createElement("a");
@@ -122,12 +122,16 @@ const downloadIcsFile = () => {
 }
 
 const main = () => {
+    console.log("main");
+    console.log(window.location.href);
     let addGamesToCalendarButton = document.createElement("button");
+    addGamesToCalendarButton.className = "calendar-button";
     addGamesToCalendarButton.textContent = "Add Games to Calendar";
     addGamesToCalendarButton.onclick = downloadIcsFile;
     
     let gameScheduleBanner = document.getElementsByClassName("text-md-30-16 font-semibold mb-3");   
-    gameScheduleBanner.item(0).insertAdjacentElement('afterend', addGamesToCalendarButton);
+    console.log(gameScheduleBanner);
+    console.log(gameScheduleBanner.item(0).insertAdjacentElement('afterend', addGamesToCalendarButton));
 }
 
 main();
